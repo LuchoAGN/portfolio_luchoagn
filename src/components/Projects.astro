@@ -1,0 +1,148 @@
+---
+import PythonIcon from "../icons/PythonIcon.astro";
+import FastAPIIcon from "../icons/FastAPIIcon.astro";
+import JWTIcon from "../icons/JWTIcon.astro";
+import AstroIcon from "../icons/AstroIcon.astro";
+import TailwindIcon from "../icons/TailwindIcon.astro";
+import VueIcon from "../icons/VueIcon.astro";
+import PandasIcon from "../icons/PandasIcon.astro";
+import LinkButton from "./LinkButton.astro"
+import GitHub from "../icons/GitHub.astro"
+import Link from "../icons/Link.astro"
+
+const TAGS = {
+  PYTHON: {
+    name: "Python",
+    class: "bg-black text-white",
+    icon: PythonIcon,
+  },
+  FASTAPI: {
+    name: "FastAPI",
+    class: "bg-[#003159] text-white",
+    icon: FastAPIIcon,
+  },
+  JWT: {
+    name: "JWT",
+    class: "bg-black text-white",
+    icon: JWTIcon,
+  },
+  AstroI: {
+    name: "Astro",
+    class: "bg-[#003159] text-white",
+    icon: AstroIcon,
+  },
+  Tailwind: {
+    name: "Tailwind",
+    class: "bg-[#003159] text-white",
+    icon: TailwindIcon,
+  },
+  VueIcon: {
+    name: "Vue",
+    class: "bg-[#003159] text-white",
+    icon: VueIcon,
+  },
+  Pandas: {
+    name: "Pandas",
+    class: "bg-black text-white",
+    icon: PandasIcon,
+  },
+};
+const PROJECTS = [
+  {
+    date: "Julio de 2023",
+    title: "FastAPI Task Manager",
+    description: `Desarrollo de una API RESTful utilizando FastAPI para la gestión de tareas. Los usuarios podrán realizar operaciones CRUD (Crear, Leer, Actualizar, Eliminar) sobre las tareas, incluyendo la asignación de prioridades y etiquetas.`,
+    link: "#",
+    github: "#",
+    image: "/projects/project-1.webp",
+    tags: [TAGS.PYTHON, TAGS.FASTAPI],
+  },
+  {
+    date: "Agosto de 2023",
+    title: "FastAPI Auth System",
+    description: `Implementación de un sistema de autenticación y autorización utilizando FastAPI, JWT (JSON Web Tokens) y base de datos SQLAlchemy. Permitirá a los usuarios registrarse, iniciar sesión y acceder a recursos protegidos según su rol.`,
+    link: "#",
+    github: "#",
+    image: "/projects/project-1.webp",
+    tags: [TAGS.PYTHON, TAGS.FASTAPI, TAGS.JWT],
+  },
+  {
+    date: "Septiembre de 2024",
+    title: "Sales Data Analysis with Pandas",
+    description: `Utilizacion de la biblioteca Pandas en Python para realizar un análisis exhaustivo de datos de ventas. Se cargarán datos de ventas desde diferentes fuentes, se limpiarán y procesarán utilizando Pandas para extraer insights y generar visualizaciones significativas.`,
+    link: "#",
+    github: "#",
+    image: "/projects/project-1.webp",
+    tags: [TAGS.PYTHON, TAGS.FASTAPI, TAGS.Pandas],
+  },
+  {
+    date: "Octubre de 2023",
+    title: "Personal Portfolio Website",
+    description: `Sitio web estático atractivo utilizando Astro Static que sirva como portafolio personal. Se incluirán secciones como 'Sobre mí', 'Proyectos', 'Experiencia', y 'Contacto', con un diseño moderno y responsive.`,
+    link: "#",
+    github: "#",
+    image: "/projects/project-1.webp",
+    tags: [TAGS.AstroI, TAGS.Tailwind],
+  },
+  {
+    date: "Noviembre de 2023",
+    title: "Interactive Educational Platform",
+    description: `Desarrollo de una plataforma educativa interactiva utilizando Astro para el frontend y Vue.js para la interactividad. La plataforma ofrecerá cursos en línea con contenido multimedia, cuestionarios interactivos y seguimiento del progreso del estudiante.`,
+    link: "#",
+    github: "#",
+    image: "/projects/project-1.webp",
+    tags: [TAGS.AstroI, TAGS.Tailwind, TAGS.VueIcon, TAGS.FASTAPI],
+  },
+];
+---
+
+<div class="flex flex-col gap-y-16">
+    {
+      PROJECTS.map(({ image, title, description, tags, link, github }) => (
+      <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
+    <div class="w-full md:w-1/2">
+      <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
+        <img alt="Recién llegado vs 5 años en Nueva Zelanda" class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105" loading="lazy" src={image} />
+      </div>
+    </div>
+  
+    <div class="w-full md:w-1/2 md:max-w-lg">
+      <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100">
+        {title}
+      </h3>
+      <div class="flex flex-wrap mt-2">
+        <ul class="flex flex-row mb-2 gap-x-2">
+            {tags.map((tag) => (
+              <li>
+                <span
+                  class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
+                >
+                  <tag.icon class="size-4" />
+                  {tag.name}
+                </span>
+              </li>
+            ))}
+          </ul>
+  
+        <div class="mt-2 text-gray-700 dark:text-gray-400">{description}</div>
+        <footer class="flex items-end justify-start mt-4 gap-x-4">
+            {github && (
+              <LinkButton href={github}>
+                <GitHub class="size-6" />
+                Code
+                
+              </LinkButton>
+            )}
+            {link && (
+              <LinkButton href={link}>
+                <Link class="size-4" />
+                Preview
+              </LinkButton>
+            )}
+          </footer>
+      </div>
+    </div>
+  </article>
+      ))
+    }
+</div>
