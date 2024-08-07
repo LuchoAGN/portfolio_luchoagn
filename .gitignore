@@ -1,5 +1,7 @@
 # build output
-
+.DS_Store
+node_modules
+dist
 
 # generated types
 .astro/
