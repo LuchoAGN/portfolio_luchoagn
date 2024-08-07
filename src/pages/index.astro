@@ -1,54 +1,52 @@
 ---
-import Layout from "../layouts/Layout.astro"
-import Hero from "../components/Hero.astro"
-import Experience from "../components/Experience.astro"
-import Projects from "../components/Projects.astro"
-import SectionContainer from "../components/SectionContainer.astro"
-import BriefCase from "../icons/BriefCase.astro"  
-import Code  from "../icons/Code.astro"
-import AboutMe from "../components/AboutMe.astro"
-import ProfileCheck from "../icons/ProfileCheck.astro"
+import Layout from "../layouts/Layout.astro";
+import Hero from "../components/Hero.astro";
+import Experience from "../components/Experience.astro";
+import Projects from "../components/Projects.astro";
+import SectionContainer from "../components/SectionContainer.astro";
+import BriefCase from "../icons/BriefCase.astro";
+import Code from "../icons/Code.astro";
+import AboutMe from "../components/AboutMe.astro";
+import ProfileCheck from "../icons/ProfileCheck.astro";
 ---
 
 <Layout
   title="Porfolio de luchoagn - Desarrollador y Programador Web con 2 años de experiencia"
   description=`¡Hola! Soy Luis Garcia, un desarrollador web apasionado con experiencia en la creación de soluciones 
-  digitales de alto impacto. Especializado en tecnologías como HTML5, CSS3, JavaScript y frameworks como Vue.js y 
+  digitales de alto impacto. Especializado en tecnologías como HTML5, CSS3, JavaScript y frameworks como React, Vue.js y 
   Astro, estoy listo para impulsar tu proyecto hacia el éxito. Con un enfoque centrado en la calidad y la eficiencia, 
   estoy comprometido a ofrecer resultados excepcionales y una experiencia de usuario inigualable. ¡Contáctame hoy y 
   llevemos tu proyecto al siguiente nivel!`
 >
   <main class="px-4">
     <SectionContainer class="py-16 md:py-36">
-      <Hero>
-        </slot>
-      </Hero>
-    </SectionContainer>
-
-    <SectionContainer id="experience" class="py-12 md:py-26">
-      <h2 class="text-3xl font-semibold mb-4 flex gap-x-3 items-center">
-        <BriefCase class="size-7"/>
-        Experiencia laboral
-      </h2>
-      <Experience/>
-    </SectionContainer>
-
-    <SectionContainer id="projects" class="py-12 md:py-26">
-      <h2 class="text-3xl font-semibold mb-4 flex gap-x-3 items-center">
-        <Code class="size-7"/>
-        Proyectos
-      </h2>
-      <Projects />
-    </SectionContainer>
-
-    <SectionContainer id="about" class="py-12 md:py-26">
-      <h2
-        class="flex items-center mb-6 text-3xl font-semibold gap-x-8 text-black/80 dark:text-white"
-      >
-        <ProfileCheck class="size-8" />
-        Sobre mí
-      </h2>
-      <AboutMe />
+      <Hero />
     </SectionContainer>
   </main>
+
+  <SectionContainer id="experience" class="py-12 md:py-26">
+    <h2 class="text-3xl font-semibold mb-4 flex gap-x-3 items-center">
+      <BriefCase class="size-7" />
+      Experiencia laboral
+    </h2>
+    <Experience />
+  </SectionContainer>
+
+  <SectionContainer id="projects" class="py-12 md:py-26">
+    <h2 class="text-3xl font-semibold mb-4 flex gap-x-3 items-center">
+      <Code class="size-7" />
+      Proyectos
+    </h2>
+    <Projects />
+  </SectionContainer>
+
+  <SectionContainer id="about" class="py-12 md:py-26">
+    <h2
+      class="flex items-center mb-6 text-3xl font-semibold gap-x-8 text-black/80 dark:text-white"
+    >
+      <ProfileCheck class="size-8" />
+      Sobre mí
+    </h2>
+    <AboutMe />
+  </SectionContainer>
 </Layout>
